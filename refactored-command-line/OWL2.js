@@ -1,5 +1,5 @@
 root = typeof exports === "undefined" ? window : exports;
-root.owl2 = ['AA', 
+root.OWL2 = ['AA', 
 'AB', 
 'AD', 
 'AE', 

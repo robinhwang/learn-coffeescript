@@ -1,9 +1,9 @@
 {Dictionary} = require './Dictionary'
 {Grid} = require './Grid'
 {Player} = require './Player'
-{OWL2} = require './owl2'
+{OWL2} = require './OWL2'
 
-grid = dictionary = currPlayer = player1 = player2 = null # module scope
+grid = dictionary = currPlayer = player1 = player2 = null
 
 inputCallback = null
 stdin = process.openStdin()
@@ -21,7 +21,6 @@ newGame = ->
     console.log """
       Initially used words:
       #{dictionary.usedWords.join(', ')}
-      
     """
   
   promptForTile1()
@@ -55,7 +54,7 @@ promptForTile2 = (x1, y1) ->
       console.log "The second tile must be different from the first."
     else
       console.log "Swapping (#{x1}, #{y1}) with (#{x2}, #{y2})..."
-      x1--; x2--; y1--; y2--; # convert 1-based indices to 0-based
+      x1--; x2--; y1--; y2--;
       {moveScore, newWords} = currPlayer.makeMove {x1, y1, x2, y2}
       unless moveScore is 0
         console.log """
