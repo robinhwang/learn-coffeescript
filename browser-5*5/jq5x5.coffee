@@ -6,7 +6,7 @@ newGame = ->
   currPlayer = player1 = new Player('Player 1', dictionary)
   player2 = new Player('Player 2', dictionary)
   drawTiles()
-  
+
   player1.num = 1
   player2.num = 2
   for player in [player1, player2]
